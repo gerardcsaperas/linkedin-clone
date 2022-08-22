@@ -1,4 +1,6 @@
 .login {
+  background-color: #f3f2ef;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

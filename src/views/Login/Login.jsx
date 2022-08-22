@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import "./Login.css";
+import logo from "../../assets/linkedin-logo.png";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -77,11 +78,7 @@ const Login = () => {
 
   return (
     <div className="login">
-      <img
-        className="login__logo"
-        src="https://1000marcas.net/wp-content/uploads/2020/01/Linkedin-logo.jpg"
-        alt=""
-      />
+      <img className="login__logo" src={logo} alt="" />
 
       <form>
         <input

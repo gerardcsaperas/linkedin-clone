@@ -17,7 +17,7 @@
   margin-bottom: 5px;
 }
 
-.feed__inputContainer > form {
+.feed__input > form {
   display: flex;
   width: 100%;
 }

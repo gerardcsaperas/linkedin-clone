@@ -20,6 +20,27 @@
 
 .login > form > input {
   box-sizing: border-box;
-  margin: 10px 0;
-  width: 100%;
+  margin: 10px 0px;
+  width: 350px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 5px;
+}
+
+.login > form > button {
+  width: 350px;
+  height: 50px;
+  font-size: large;
+  color: white;
+  background-color: #0074b1;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.login__register-now {
+  color: #0177b7;
+  cursor: pointer;
 }

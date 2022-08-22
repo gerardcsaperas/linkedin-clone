@@ -9,8 +9,18 @@ import WorkIcon from "@mui/icons-material/Work";
 import SmsIcon from "@mui/icons-material/Sms";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AvatarIcon from "./AvatarIcon/AvatarIcon";
+import { useDispatch } from "react-redux";
+import { logout } from "../../reducers/userSlice";
+import { getAuth, signOut } from "firebase/auth";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const logoutUser = () => {
+    dispatch(logout());
+    const auth = getAuth();
+    signOut(auth);
+  };
   return (
     <div className="header">
       <div className="header__left">
@@ -29,6 +39,7 @@ const Header = () => {
         <HeaderIcon title="Messaging" Icon={SmsIcon} />
         <HeaderIcon title="Notifications" Icon={NotificationsIcon} />
         <AvatarIcon avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaBdLZbBal9P9JBgACiUo3DOSt18i85zp2cRonsQI&s"></AvatarIcon>
+        <button onClick={logoutUser}>Log Out</button>
       </div>
     </div>
   );

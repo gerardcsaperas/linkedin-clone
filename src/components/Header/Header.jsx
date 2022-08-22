@@ -38,7 +38,7 @@ const Header = () => {
         <HeaderIcon title="Jobs" Icon={WorkIcon} />
         <HeaderIcon title="Messaging" Icon={SmsIcon} />
         <HeaderIcon title="Notifications" Icon={NotificationsIcon} />
-        <AvatarIcon avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaBdLZbBal9P9JBgACiUo3DOSt18i85zp2cRonsQI&s"></AvatarIcon>
+        <AvatarIcon />
         <button onClick={logoutUser}>Log Out</button>
       </div>
     </div>

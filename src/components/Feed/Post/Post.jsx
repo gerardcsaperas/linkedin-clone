@@ -7,7 +7,7 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import IosShareOutlinedIcon from "@mui/icons-material/IosShareOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 
-function Post({ username, userHighlight, message, photoUrl }) {
+function Post({ username, userHighlight, message, photoURL }) {
   if (!username || !message) {
     return null;
   }
@@ -15,7 +15,7 @@ function Post({ username, userHighlight, message, photoUrl }) {
   return (
     <div className="post">
       <div className="post__header">
-        <Avatar />
+        <Avatar src={photoURL} />
         <div className="post__info">
           <h2>{username}</h2>
           <p>{userHighlight && userHighlight}</p>

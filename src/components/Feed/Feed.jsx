@@ -17,8 +17,12 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 import { db } from "../../firebase";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../reducers/userSlice";
 
 const Feed = () => {
+  const user = useSelector(selectUser);
+
   const postsCol = collection(db, "posts");
 
   const [input, setInput] = useState("");
@@ -43,10 +47,10 @@ const Feed = () => {
 
     try {
       await addDoc(postsCol, {
-        username: "Gerard Castrelo Saperas",
+        username: user.displayName,
         userHighlight: "Fullstack Developer",
         message: input,
-        photoUrl: "",
+        photoURL: user.photoURL,
         timestamp: serverTimestamp(),
       });
       getPosts();
@@ -62,7 +66,7 @@ const Feed = () => {
     <div className="feed">
       <div className="feed_top">
         <div className="feed__inputContainer">
-          <Avatar className="feed__inputAvatar" />
+          <Avatar className="feed__inputAvatar" src={user.photoURL} />
           <div className="feed__input">
             <EditIcon />
             <form action="">
@@ -94,14 +98,14 @@ const Feed = () => {
         posts.map(
           ({
             id,
-            data: { username, userHighlight, message, photoUrl, timestamp },
+            data: { username, userHighlight, message, photoURL, timestamp },
           }) => (
             <Post
               key={id}
               username={username}
               userHighlight={userHighlight}
               message={message}
-              photoUrl={photoUrl}
+              photoURL={photoURL}
               timestamp={timestamp}
             />
           )

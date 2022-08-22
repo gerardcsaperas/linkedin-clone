@@ -2,11 +2,18 @@ import React from "react";
 import { Avatar } from "@mui/material";
 import "./AvatarIcon.css";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../../reducers/userSlice";
 
-const AvatarIcon = ({ avatar }) => {
+const AvatarIcon = () => {
+  const user = useSelector(selectUser);
+
   return (
     <div className="avatarIcon">
-      {avatar && <Avatar className="avatarIcon__avatar" src={avatar} />}
+      <Avatar
+        className="avatarIcon__avatar"
+        src={user?.photoURL || user?.email[0]}
+      />
       <div className="avatarIcon__title">
         <h3>Me</h3>
         <ArrowDropDownIcon className="avatarIcon__arrowDown"></ArrowDropDownIcon>

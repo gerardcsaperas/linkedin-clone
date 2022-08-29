@@ -38,8 +38,7 @@ const Header = () => {
         <HeaderIcon title="Jobs" Icon={WorkIcon} />
         <HeaderIcon title="Messaging" Icon={SmsIcon} />
         <HeaderIcon title="Notifications" Icon={NotificationsIcon} />
-        <AvatarIcon />
-        <button onClick={logoutUser}>Log Out</button>
+        <AvatarIcon onClick={logoutUser}/>
       </div>
     </div>
   );
